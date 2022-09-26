@@ -19,6 +19,49 @@
   float: right;
 }
 
+.main-section {
+  display: flex;
+  justify-content: center;
+  border: 2px solid red;
+  height: 600px;
+  margin: 35px 30px;
+  align-items: center;
+}
+
+.quiz {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 300px;
+}
+
+.question-number {
+  left: 100px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  border: 2px solid red;
+  height: 65px;
+  position: absolute;
+  bottom: 0;
+  width: 90vw;
+  margin-left: 50px;
+  margin-right: 50px;
+ 
+}
+
+.footer-info {
+  display: flex;
+  border: 1px solid blue;
+  margin: 20px;
+  padding: 20px;
+  
+}
+
 @media screen and (max-width: 768px) {
   .header {
     display: flex;
@@ -28,5 +71,18 @@
 
   .app-name {
     margin-bottom: 30px;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    
+  }
+
+  .footer-info {
+    right: 50%;
+
   }
 }
