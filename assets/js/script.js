@@ -10,6 +10,10 @@ var btnAnswer4 = document.querySelector('#btnAnswer4')
 var checkAnswer = document.querySelector('#checkAnswer')
 var submit = document.querySelector('#submit')
 var finalPoints = document.querySelector('#finalPoints')
+var pointRecord = document.querySelector('#pointRecord')
+var initial = document.querySelector('#name')
+var submitBtn = document.querySelector('#submitBtn')
+var pointCheck = document.querySelector('#pointCheck')
 
 // Questions
 
@@ -162,13 +166,57 @@ function getPoints() {
 
 // Add Score to Scoreboard
 function showPoints() {
+  pointRecord.innerHTML = ""
+  pointRecord.style.display = "block"
+  var highScore = sort()
+  var topScore = highScore.slice(0, 5)
+  for (var i = 0; i < topScore.length; i++) {
+    var point = topScore[i]
 
+    var li = document.createElement("li")
+    li.textContent = point.user + ' -- ' + point.score
+    li.setAttribute('data', i)
+    pointRecord.appendChild(li)
+  }
 }
 
+// Sorts the leaderboard 
+function sort() {
+  var sortedList = getPoints()
+  if (getPoints == null) {
+    return;
+  } else {
+    sortedList.sort(function(a, b) {
+      return b.score - a.score
+    })
+    return sortedList;
+  }
+}
+
+// Saves leaderboard data to Local Storage
+function addPoints(e) {
+  var leaderList = getPoints()
+    leaderList.push(e)
+    localStorage.setItem('PointList', JSON.stringify(leaderList))
+}
+
+function savePoints() {
+  var pointScore = {
+    user: initial.value,
+    points: totalPoints
+  }
+  addPoints(pointScore)
+  showPoints()
+}
 
 // Event Listeners
 startButton.addEventListener('click', quizStart)
 
 mainButton.forEach(function(click) {
   click.addEventListener('click', answerCheck)
+})
+
+submitBtn.addEventListener('click', function(event) {
+  event.preventDefault()
+  savePoints()
 })
