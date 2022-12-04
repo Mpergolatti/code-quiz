@@ -148,7 +148,6 @@ function answerCheck(event) {
 
 // gameOver function
 function gameOver() {
-  debugger;
   questions.style.display = 'none'
   submit.style.display = 'block'
   console.log(submit)
@@ -178,7 +177,7 @@ function showPoints() {
     var point = topScore[i]
 
     var li = document.createElement("li")
-    li.textContent = point.user + ' -- ' + point.score
+    li.textContent = point.user + ' -- ' + point.point
     li.setAttribute('data', i)
     pointRecord.appendChild(li)
   }
@@ -207,7 +206,7 @@ function addPoints(e) {
 function savePoints() {
   var pointScore = {
     user: initial.value,
-    points: totalPoints
+    point: totalPoints
   }
   addPoints(pointScore)
   showPoints()
