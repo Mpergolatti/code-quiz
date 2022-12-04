@@ -6,6 +6,8 @@ var btnAnswer1 = document.querySelector('#btnAnswer1')
 var btnAnswer2 = document.querySelector('#btnAnswer2')
 var btnAnswer3 = document.querySelector('#btnAnswer3')
 var btnAnswer4 = document.querySelector('#btnAnswer4')
+var submit = document.querySelector('#submit')
+var finalPoints = document.querySelector('#finalPoints')
 
 // Questions
 
@@ -68,20 +70,20 @@ var timeLeft = document.getElementById('timer');
 // Starting Variables
 var remainSec = 60;
 var questionNum = 0;
-var totalScore = 0;
+var totalPoints = 0;
 var questionCount = 1;
 
 // Time Function
 function countdown() {
   var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeLeft.textContent = 'Time left: ' + secondsLeft;
-      if (secondsLeft <= 0 ) {
+    remainSec--;
+    timeLeft.textContent = 'Time left: ' + remainSec;
+      if (remainSec <= 0 ) {
         clearInterval(timerInterval);
         timeLeft.textContent = "Time's Up!";
         gameOver();
       } else if
-        (questionCount >= questionSource.length +1) {
+        (questionCount >= questionPanel.length +1) {
           clearInterval(timerInterval);
           gameOver();
         }
@@ -90,9 +92,8 @@ function countdown() {
 
 // Quiz Start Function
 function quizStart() {
-  // introPage.style.display = 'none';
-  // questions.style.display = 'block';
-  console.log(quizStart)
+  introPage.style.display = 'none';
+  questions.style.display = 'block';
   questionNum = 0;
   countdown();
   showQuestion(questionNum);
@@ -119,9 +120,9 @@ function answerCheck(event) {
   // Check The Answer
   if(questionPanel[questionNum].answer == event.target.value) {
     checkLine.textContent = 'Correct!'
-    totalScore = totalScore + 1;
+    totalPoints = totalPoints + 1;
   } else {
-    secondsLeft = secondsLeft - 10
+    remainSec = remainSec - 10
     checkLine.textContent = 'That is Incorrect, The Correct Answer is ' + questionPanel[questionNum].answer + ' .'
   }
 
@@ -132,6 +133,32 @@ function answerCheck(event) {
     gameOver();
   }
   questionCount++
+}
+
+// gameOver function
+function gameOver() {
+  questions.style.display = 'none'
+  submit.style.display = 'block'
+  console.log(submit)
+  finalPoints.textContent = 'Your Final Score is: ' + totalPoints
+  timeLeft.style.display = 'none'
+}
+
+// getPoints Local Storage
+function getPoints() {
+  var currentList = localStorage.getItem('PointList')
+  if(currentList !== null) {
+    newList = JSON.parse(currentList)
+    return newList
+  } else {
+    newList = []
+  }
+  return newList
+}
+
+// Add Score to Scoreboard
+function showPoints() {
+
 }
 
 
