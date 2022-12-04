@@ -14,6 +14,9 @@ var pointRecord = document.querySelector('#pointRecord')
 var initial = document.querySelector('#name')
 var submitBtn = document.querySelector('#submitBtn')
 var pointCheck = document.querySelector('#pointCheck')
+var backBtn = document.querySelector('#backBtn')
+var clearBtn = document.querySelector('#clearBtn')
+var leaderboardPage = document.querySelector('#leaderboardPage')
 
 // Questions
 
@@ -145,6 +148,7 @@ function answerCheck(event) {
 
 // gameOver function
 function gameOver() {
+  debugger;
   questions.style.display = 'none'
   submit.style.display = 'block'
   console.log(submit)
@@ -218,5 +222,23 @@ mainButton.forEach(function(click) {
 
 submitBtn.addEventListener('click', function(event) {
   event.preventDefault()
+  leaderboardPage.style.display = "block"
   savePoints()
+})
+
+pointCheck.addEventListener('click', function(event) {
+  event.preventDefault()
+  leaderboardPage.style.display = "block"
+  showPoints()
+})
+
+backBtn.addEventListener('click', function(event) {
+  event.preventDefault()
+  location.reload();
+})
+
+clearBtn.addEventListener('click', function(event) {
+  event.preventDefault()
+  localStorage.clear()
+  showPoints()
 })
