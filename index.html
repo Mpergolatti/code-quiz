@@ -1,46 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./assets/css/style.css">
   <title>Code Quiz</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
 <body>
-
-  <!-- Application name and Timer -->
-  <header class="header">
-
-    <div class="app-name">
-      <h2>Code Quiz</h2>
+  <header>
+    <div class="header">
+      <div>
+        <button class="button" id="scoreCheck">View Leaderboard</button>
+      </div>
+      <div>
+        <p id="timer">Time Remaining: 60</p>
+      </div>
     </div>
-
-    <div class="timer-section">
-      <h3 id="countdown"></h3>
-    </div>
-
   </header>
 
-  <main class="main-section" id="">
-
-    <div class="question-number">
-      <p>QUESTION 1</p>
-    </div>
-
-      <h3 class="quiz">PLACEHOLDER</h3>
-
+  <main>
+    <section class="introPage" id="introPage">
+      <div class="welcome" id="welcome">
+        <h1>Code Quiz!</h1>
+        <p id="rules">Answer the questions within the time limit. Wrong answers hurt your time by 10 seconds</p>
+        <button class="button" id="startButton">Start Quiz</button>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-
-    <h3 class="footer-info"> Xyloxin 2022 &copy</h3>
-
+  <footer>
   </footer>
-  
 
-  <script src="./assets/script.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
