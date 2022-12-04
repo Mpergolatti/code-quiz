@@ -2,10 +2,12 @@ var introPage = document.querySelector('#introPage')
 var questions = document.querySelector('#questions')
 var startButton = document.querySelector('#startButton')
 var mainQuestion = document.querySelector('#mainQuestion')
+var mainButton = document.querySelectorAll('.btnSelect')
 var btnAnswer1 = document.querySelector('#btnAnswer1')
 var btnAnswer2 = document.querySelector('#btnAnswer2')
 var btnAnswer3 = document.querySelector('#btnAnswer3')
 var btnAnswer4 = document.querySelector('#btnAnswer4')
+var checkAnswer = document.querySelector('#checkAnswer')
 var submit = document.querySelector('#submit')
 var finalPoints = document.querySelector('#finalPoints')
 
@@ -92,8 +94,9 @@ function countdown() {
 
 // Quiz Start Function
 function quizStart() {
-  introPage.style.display = 'none';
-  questions.style.display = 'block';
+  
+  // introPage.style.display = 'none';
+  // questions.style.display = 'block';
   questionNum = 0;
   countdown();
   showQuestion(questionNum);
@@ -112,18 +115,19 @@ function showQuestion(e) {
 // Correct and Incorrect Answer Function
 function answerCheck(event) {
   event.preventDefault();
-  checkLine.style.display = 'block'
+  checkAnswer.style.display = 'block'
   setTimeout(function() {
-    checkLine.style.display = 'none'
+    checkAnswer.style.display = 'none'
   }, 1000);
 
   // Check The Answer
   if(questionPanel[questionNum].answer == event.target.value) {
-    checkLine.textContent = 'Correct!'
+    checkAnswer.textContent = 'Correct!'
     totalPoints = totalPoints + 1;
+
   } else {
     remainSec = remainSec - 10
-    checkLine.textContent = 'That is Incorrect, The Correct Answer is ' + questionPanel[questionNum].answer + ' .'
+    checkAnswer.textContent = 'That is Incorrect, The Correct Answer is ' + questionPanel[questionNum].answer + ' .'
   }
 
   // Another Question Appears
@@ -164,3 +168,7 @@ function showPoints() {
 
 // Event Listeners
 startButton.addEventListener('click', quizStart)
+
+mainButton.forEach(function(click) {
+  click.addEventListener('click', answerCheck)
+})
