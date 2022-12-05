@@ -54,6 +54,10 @@
 ---
 ## Tests:
   Tested and Passed
+
+---
+## Screenshots:
+![Main Page](./assets/img/codeQuiz.png)
   
 ---
 ## Questions and Comments:
