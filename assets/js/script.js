@@ -22,54 +22,84 @@ var leaderboardPage = document.querySelector('#leaderboardPage')
 
 var questionPanel = [
   {
-    question: 'Question 1',
+    question: '1.) What is the correct way to call the random method on the Math global object?',
     choices: [
-      'A. One',
-      'B. Two',
-      'C. Three',
-      'D. Four'
+      'Math(random)',
+      'Math.random()',
+      'random.Math()',
+      'math.random()'
+    ],
+    answer: 'B'
+  },
+  {
+    question: '2.) Which of the following is an example of a single line comment?',
+    choices: [
+      '"comment"',
+      '// comment',
+      '/* comment',
+      '* comment'
+    ],
+    answer: 'B'
+  },
+  {
+    question: '3.) How do you select an ID from the HTML?',
+    choices: [
+      ' . ',
+      ' $ ',
+      ' * ',
+      ' # '
+    ],
+    answer: 'D'
+  },
+  {
+    question: '4.) How do you create an alert box?',
+    choices: [
+      'alertBox()',
+      'alert()',
+      'msg()',
+      'msgBox()'
+    ],
+    answer: 'B'
+  },
+  {
+    question: '5.) What symbols are used to create an array?',
+    choices: [
+      '[ ]',
+      '( )',
+      '{ }',
+      '| |'
     ],
     answer: 'A'
   },
   {
-    question: 'Question 2',
+    question: '6.) Which of the following is not a usable declaration',
     choices: [
-      'A. One',
-      'B. Two',
-      'C. Three',
-      'D. Four'
+      'var',
+      'const',
+      'stay',
+      'let'
+    ],
+    answer: 'C'
+  },
+  {
+    question: '7.) How do you run a created function?',
+    choices: [
+      'function()',
+      '()function',
+      '(function)',
+      '(run)function'
     ],
     answer: 'A'
   },
   {
-    question: 'Question 3',
+    question: '8.) Which tag is correct to create a paragraph in HTML?',
     choices: [
-      'A. One',
-      'B. Two',
-      'C. Three',
-      'D. Four'
+      '<br>',
+      '<h1>',
+      '<div>',
+      '<p>'
     ],
-    answer: 'A'
-  },
-  {
-    question: 'Question 4',
-    choices: [
-      'A. One',
-      'B. Two',
-      'C. Three',
-      'D. Four'
-    ],
-    answer: 'A'
-  },
-  {
-    question: 'Question 5',
-    choices: [
-      'A. One',
-      'B. Two',
-      'C. Three',
-      'D. Four'
-    ],
-    answer: 'A'
+    answer: 'D'
   },
 ]
 
