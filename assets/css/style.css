@@ -1,18 +1,91 @@
+body {
+  background-image: url(../img/leaves.jpg);
+}
+
+/* Header Section */
+
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  border: 1px solid red;
+  border: 3px solid black;
+  background: rgb(109,188,156);
+  border-radius: 20px;
+  min-height: 90px;
 }
+
+/* h1 {
+  font-size: 50px;
+} */
+
+button {
+  width: 200px;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: bolder;
+  background-color: rgb(14,84,78);
+  border-radius: 12px;
+  box-shadow: 3px 3px 10px black;
+}
+
+button:hover {
+  background-color: aquamarine;
+}
+
+#pointCheck {
+  margin-left: 75px;
+}
+
+#timer {
+  background-color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-right: 100px;
+  letter-spacing: 1px;
+  background-color: rgb(14,84,78);
+  font-weight: bolder;
+  border-radius: 12px;
+  box-shadow: 3px 3px 10px black;
+  border: 2px solid black;
+}
+
+.timeNum {
+  font-size: 24px;
+  color: aquamarine;
+  text-shadow: 2px 2px 1px black;
+}
+
+/* Main Section */
 
 .introPage {
   display: flex;
-  border: 1px solid blue;
-  width: 80%;
-  margin: 20px auto;
+  border: 2px solid black;
+  width: 50%;
+  min-height: 500px;
+  margin: 150px auto;
   padding: 20px;
   justify-content: center;
   align-items: center;
+  background-color: rgb(109,188,156);
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px black;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: cursive;
+  text-shadow: 2px 2px 1px aquamarine;
+}
+
+#rules {
+  text-align: center;
+  max-width: 350px;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: cursive;
+  letter-spacing: 1px;
+
 }
 
 .welcome {
@@ -25,10 +98,134 @@
   margin: 10px;
 }
 
+
+/* Question Section */
+
 .questions {
+  display: flex;
+  border: 2px solid black;
+  width: 35%;
+  min-height: 400px;
+  margin: 150px auto;
+  padding: 20px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(109,188,156);
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px black;
+}
+
+#mainQuestion, h2{
+  font-family: cursive;
+  text-align: center;
+}
+
+ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid red;
+  padding: 30px;
+  
 }
 
+#checkAnswer {
+  font-family: cursive;
+  font-size: 20px;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+
+.btnSelect {
+  width: 150px;
+}
+
+ul, li {
+  list-style: none;
+  margin: 10px;
+  
+}
+
+/* Point Section */
+
+.submit {
+  display: flex;
+  border: 2px solid black;
+  width: 35%;
+  min-height: 400px;
+  margin: 150px auto;
+  padding: 20px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(109,188,156);
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px black;
+}
+
+#finalPoints {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: cursive;
+}
+
+#finalPoints, p {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-family: cursive;
+}
+
+#name {
+  margin-right: 20px;
+  box-shadow: 1px 1px 3px inset black;
+  width: 150px;
+  height: 25px;
+  border-radius: 15px;
+}
+
+#submitBtn {
+  height: 27px;
+  width: 125px;
+}
+
+/* Leaderboard Page */
+
+.leaderboardPage {
+  display: flex;
+  border: 2px solid black;
+  width: 35%;
+  min-height: 400px;
+  margin: 150px auto;
+  padding: 20px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(109,188,156);
+  border-radius: 30px;
+  box-shadow: 10px 10px 10px black;
+}
+
+#pointRecord {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.endBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+#backBtn {
+  margin-right: 50px;
+}
+
+
+.questions, .submit, .leaderboardPage, #checkAnswer {
+  display: none;
+}
 

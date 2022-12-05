@@ -101,9 +101,8 @@ function countdown() {
 
 // Quiz Start Function
 function quizStart() {
-  
-  // introPage.style.display = 'none';
-  // questions.style.display = 'block';
+  introPage.style.display = 'none';
+  questions.style.display = 'block';
   questionNum = 0;
   countdown();
   showQuestion(questionNum);
@@ -221,18 +220,28 @@ mainButton.forEach(function(click) {
 
 submitBtn.addEventListener('click', function(event) {
   event.preventDefault()
+  submit.style.display = 'none'
   leaderboardPage.style.display = "block"
+  introPage.style.display = 'none'
+  questions.style.display = 'none'
   savePoints()
 })
 
 pointCheck.addEventListener('click', function(event) {
   event.preventDefault()
-  leaderboardPage.style.display = "block"
+  submit.style.display = 'none'
+  leaderboardPage.style.display = 'block'
+  introPage.style.display = 'none'
+  questions.style.display = 'none'
   showPoints()
 })
 
 backBtn.addEventListener('click', function(event) {
   event.preventDefault()
+  submit.style.display = 'none'
+  leaderboardPage.style.display = 'none'
+  introPage.style.display = 'block'
+  questions.style.display = 'none'
   location.reload();
 })
 

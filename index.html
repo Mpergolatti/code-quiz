@@ -14,7 +14,7 @@
         <button class="button" id="pointCheck">View Leaderboard</button>
       </div>
       <div>
-        <p id="timer">Time Remaining: 60</p>
+        <p id="timer">Time Left: <span class="timeNum">60</span></p>
       </div>
     </div>
   </header>
@@ -32,7 +32,7 @@
     <!-- Questions and Answers -->
     <section class="questions" id="questions">
       <div>
-        <h2 id="mainQuestion">Question:</h2>
+        <h2 id="mainQuestion">Question: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti modi fugiat, tempora eos deleniti reiciendis sunt! Aperiam mollitia fugiat nostrum odio eos?</h2>
         <ul>
           <li><button class="btnSelect" id="btnAnswer1" value="A">Answer 1</button></li>
           <li><button class="btnSelect" id="btnAnswer2" value="B">Answer 2</button></li>
@@ -44,13 +44,13 @@
         <p>Right or Wrong</p>
       </div>
     </section>
-  <!-- Score Section -->
+  <!-- Point Section -->
     <section class="submit" id="submit">
       <div>
         <h2 id="score">The Quiz Is Over</h2>
         <p id="finalPoints">Your final score is:</p>
-        <div>
-          <p>Enter Name</p>
+        <p>Enter Name:</p>
+        <div class="initialSubmit">
           <input type="text" id="name">
           <button class="button" id="submitBtn">Submit</button>
         </div> 
@@ -62,7 +62,7 @@
       <div>
         <h2>Leaderboard</h2>
         <div id="pointRecord">Your Score:</div>
-        <div>
+        <div class="endBtn">
           <button id="backBtn">Back</button>
           <button id="clearBtn">Clear Leaderboards</button>
         </div>
